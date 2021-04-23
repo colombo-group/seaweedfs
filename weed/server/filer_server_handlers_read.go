@@ -99,10 +99,11 @@ func (fs *FilerServer) GetOrHeadHandler(w http.ResponseWriter, r *http.Request, 
 			seaweedHeaders = append(seaweedHeaders, header)
 		}
 	}
-	seaweedHeaders = append(seaweedHeaders, "Content-Disposition")
-	seaweedHeaders = append(seaweedHeaders, "Content-Range")
-	seaweedHeaders = append(seaweedHeaders, "Content-Length")
-	seaweedHeaders = append(seaweedHeaders, "Accept-Ranges")
+	// seaweedHeaders = append(seaweedHeaders, "Content-Disposition")
+	// seaweedHeaders = append(seaweedHeaders, "Content-Range")
+	// seaweedHeaders = append(seaweedHeaders, "Content-Length")
+	// seaweedHeaders = append(seaweedHeaders, "Accept-Ranges")
+	seaweedHeaders = append(seaweedHeaders, "*")
 	w.Header().Set("Access-Control-Expose-Headers", strings.Join(seaweedHeaders, ","))
 
 	//set tag count
